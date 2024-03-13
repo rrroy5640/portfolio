@@ -32,7 +32,7 @@ export const AboutCard = () => {
   };
 
   return (
-    <div className=" shadow-lg rounded-lg p-4 mr-48">
+    <div className=" shadow-lg rounded-lg p-4 mx-auto w-full md:max-w-2xl lg:max-w-2xl">
       <div className=" justify-start mb-4">
         <button
           onClick={() => handleTabClick("skills")}

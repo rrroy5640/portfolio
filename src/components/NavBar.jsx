@@ -37,7 +37,7 @@ export const NavBar = () => {
       <ul
         className={`flex flex-col md:flex-row md:items-center absolute md:static bg-purple bg-opacity-20 w-full md:w-auto transition-all duration-300 ease-in ${isNavExpanded ? "top-16" : "top-[-490px]"}`}
       >
-        <li className="m-4">
+        <li className="ml-12 mb-4">
           <Link
             to="home"
             smooth={true}
@@ -47,7 +47,7 @@ export const NavBar = () => {
             <button className=" text-indigo-400 h-4 text-2xl">Home</button>
           </Link>
         </li>
-        <li className="m-4">
+        <li className="ml-12 mb-4">
           <Link
             to="aboutme"
             smooth={true}
@@ -55,6 +55,16 @@ export const NavBar = () => {
             onClick={() => setIsNavExpanded(false)}
           >
             <button className=" text-indigo-400 h-4 text-2xl">About Me</button>
+          </Link>
+        </li>
+        <li className="ml-12 mb-4">
+          <Link
+            to="contact"
+            smooth={true}
+            duration={500}
+            onClick={() => setIsNavExpanded(false)}
+          >
+            <button className=" text-indigo-400 h-4 text-2xl">Contact</button>
           </Link>
         </li>
       </ul>
