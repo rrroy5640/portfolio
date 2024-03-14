@@ -12,10 +12,11 @@ export const AboutCard = () => {
     if (selectedTab === "skills") {
       return (
         <div className="h-48 w-96 overflow-auto text-xl text-gray-300">
-          <p>
-            I have experience with the following technologies: HTML, CSS,
-            JavaScript, React, Node.js, Express, MongoDB, and Tailwind CSS.
-          </p>
+          <ul className="list-disc list-inside">
+            <li>HTML, CSS, Javascript, Kotlin, C#</li>
+            <li>React, Node.js, Express, MongoDB, SQL</li>
+            <li>Git, GitHub, Heroku</li>
+          </ul>
         </div>
       );
     }
@@ -23,8 +24,9 @@ export const AboutCard = () => {
       return (
         <div className="h-48 w-96 overflow-auto text-xl text-gray-300">
           <p>
-            I have a Bachelor's degree in Computer Science from the University
-            of Tasmania
+            <span>Bachelor in Computer Science</span>
+            <br />
+            <span >University of Tasmania</span>
           </p>
         </div>
       );

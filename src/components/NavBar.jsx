@@ -5,7 +5,8 @@ export const NavBar = () => {
   const [isNavExpanded, setIsNavExpanded] = useState(false);
 
   return (
-    <nav className="fixed w-full flex justify-end items-center px-8 py-4 bg-gradient-to-b from-slate-800 ">
+    <nav className="fixed w-full flex justify-between items-center px-8 py-4 bg-gradient-to-b from-slate-800 ">
+      <img src="logo.png" className="w-16 h-16"></img>
       <button
         className="text-xl text-white md:hidden"
         onClick={() => setIsNavExpanded(!isNavExpanded)}

@@ -17,13 +17,8 @@ export const ContactForm = () => {
         className="space-y-6 w-full md:max-w-lg lg:max-w-lg mx-auto px-8"
       >
         <div>
-          <label
-            htmlFor="email"
-            className="block text-lg font-medium text-gray-700 mb-2"
-          >
-            Email Address
-          </label>
           <input
+            placeholder="Your email"
             id="email"
             type="email"
             name="email"
@@ -38,16 +33,11 @@ export const ContactForm = () => {
         </div>
 
         <div>
-          <label
-            htmlFor="message"
-            className="block text-lg font-medium text-gray-700 mb-2"
-          >
-            Message
-          </label>
           <textarea
+            placeholder="Your message"
             id="message"
             name="message"
-            rows="4"
+            rows="6"
             className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
           ></textarea>
           <ValidationError

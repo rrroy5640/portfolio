@@ -1,10 +1,11 @@
 import { AboutCard } from "../components/AboutCard";
+import { ProjectCard } from "../components/ProjectCard";
 
 export const AboutMe = () => {
   return (
-    <section className="sm:flex-col md:flex-row w-full h-screen bg-cover bg-center bg-no-repeat bg-fixed flex items-center justify-between bg-slate-700">
-      <div className=" sm:mt-16 mx-auto">
-        <h1 className="text-4xl font-bold text-violet-400">Home</h1>
+    <section className=" flex flex-col md:flex-row w-full h-screen bg-cover bg-center bg-no-repeat bg-fixed items-center justify-center bg-slate-700 space-y-8 md:space-y-0 md:space-x-10 py-12">
+      <div className=" px-16 mx-auto">
+          <ProjectCard/>
       </div>
       <div className=" px-16 mx-auto">
         <h1 className=" px-8 py-4 text-3xl font-bold underline text-slate-300">
