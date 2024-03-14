@@ -11,7 +11,7 @@ export const AboutCard = () => {
   const details = () => {
     if (selectedTab === "skills") {
       return (
-        <div className="h-48 w-96 overflow-auto text-xl text-gray-300">
+        <div className="h-48 w-64 md:w-72 lg:w-96 overflow-auto text-xl text-gray-300">
           <ul className="list-disc list-inside">
             <li>HTML, CSS, Javascript, Kotlin, C#</li>
             <li>React, Node.js, Express, MongoDB, SQL</li>
@@ -22,11 +22,11 @@ export const AboutCard = () => {
     }
     if (selectedTab === "education") {
       return (
-        <div className="h-48 w-96 overflow-auto text-xl text-gray-300">
+        <div className="h-48 w-64 md:w-72 lg:w-96 overflow-auto text-xl text-gray-300">
           <p>
             <span>Bachelor in Computer Science</span>
             <br />
-            <span >University of Tasmania</span>
+            <span>University of Tasmania</span>
           </p>
         </div>
       );
