@@ -18,9 +18,9 @@ export const ProjectCard = () => {
       <button
         onClick={prevProject}
         aria-label="Previous project"
-        className="absolute left-0 z-10 m-2"
+        className="absolute left-1 top-1/2 transform -translate-y-1/2 z-20 m-2 bg-black bg-opacity-50 rounded-full p-2 hover:bg-opacity-70 transition-opacity duration-300"
       >
-        <IoIosArrowBack size="24px" />
+        <IoIosArrowBack size="24px" className="text-white" />
       </button>
       <a href={projects[current].url} target="_blank" rel="noopener noreferrer">
         <img
@@ -37,9 +37,9 @@ export const ProjectCard = () => {
       <button
         onClick={nextProject}
         aria-label="Next project"
-        className="absolute right-0 z-10 m-2"
+        className="absolute right-1 top-1/2 transform -translate-y-1/2 z-20 m-2 bg-black bg-opacity-50 rounded-full p-2 hover:bg-opacity-70 transition-opacity duration-300"
       >
-        <IoIosArrowForward size="24px" />
+        <IoIosArrowForward size="24px" className="text-white" />
       </button>
     </div>
   );

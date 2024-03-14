@@ -1,7 +1,7 @@
 export const Home = () => {
   return (
     <>
-      <section className="w-full h-screen bg-cover bg-center bg-no-repeat bg-fixed flex items-center justify-evenly bg-black">
+      <section className="w-full h-screen bg-cover bg-center bg-no-repeat bg-fixed flex flex-col-reverse md:flex-row items-center justify-evenly bg-black">
         <div className="mx-auto">
           <h1 className="text-3xl text-violet-400">
             Developer
@@ -11,11 +11,11 @@ export const Home = () => {
             <br /> I'm Linyi
           </h1>
         </div>
-        <div className="justify-center items-center mx-auto">
+        <div className="justify-center items-center mx-auto lg:pr-16">
           <img
             src="/avatar.webp"
             alt="Linyi"
-            className=" rounded-full w-32 h-32 md:w-64 md:h-64 border-2 border-white"
+            className=" rounded-full w-64 h-64 border-2 border-white"
           />
         </div>
       </section>

@@ -34,17 +34,17 @@ export const AboutCard = () => {
   };
 
   return (
-    <div className=" shadow-lg rounded-lg p-4 mx-auto w-full md:max-w-2xl lg:max-w-2xl">
+    <div className=" shadow-lg rounded-lg p-4 mx-auto w-full md:max-w-4xl lg:max-w-4xl">
       <div className=" justify-start mb-4">
         <button
           onClick={() => handleTabClick("skills")}
-          className={`mr-4 pb-2 ${selectedTab === "skills" ? " text-pink-800 border-b-2 border-red-500 font-medium" : "text-slate-300"}`}
+          className={`mr-4 pb-2 ${selectedTab === "skills" ? " text-violet-500 border-b-2 border-violet-500 font-medium" : "text-slate-300"}`}
         >
           <h1 className="text-2xl font-bold">Skills</h1>
         </button>
         <button
           onClick={() => handleTabClick("education")}
-          className={`mr-4 pb-2 ${selectedTab === "education" ? " text-pink-800 border-b-2 border-red-500 font-medium" : " text-slate-300"}`}
+          className={`mr-4 pb-2 ${selectedTab === "education" ? " text-violet-500 border-b-2 border-violet-500 font-medium" : " text-slate-300"}`}
         >
           <h1 className="text-2xl font-bold">Education</h1>
         </button>
