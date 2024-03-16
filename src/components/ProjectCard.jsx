@@ -1,3 +1,4 @@
+import { useState } from "react";
 import projects from "../projects";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
@@ -16,6 +17,7 @@ export const ProjectCard = () => {
     pauseOnHover: true,
     swipeToSlide: true,
   };
+  const [currentSlide, setCurrentSlide] = useState(0);
 
   return (
     <div className=" p-14 max-w-sm md:max-w-md lg:max-w-md mx-auto items-cente">
