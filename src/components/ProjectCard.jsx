@@ -21,24 +21,24 @@ export const ProjectCard = () => {
   return (
     <div className=" p-14 max-w-sm md:max-w-md lg:max-w-md mx-auto items-center">
       <Slider {...settings}>
-        {projects.map((project, index) => {
-          return (
-            <div key={index} className=" items-center  group relative">
-              <a href={project.url} target="_blank" rel="noopener noreferrer">
-                <img
-                  src={project.image}
-                  alt={`Project ${index}`}
-                  className="w-full object-cover rounded-lg shadow-lg transition-transform transform hover:scale-105 duration-500"
-                />
-                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                  <p className="text-white text-lg p-4">
-                    {project.description}
-                  </p>
-                </div>
-              </a>
-            </div>
-          );
-        })}
+        {
+            projects.map((project, index) => {
+                return (
+                    <div key={index} className="w-full">
+                        <img src={project.image} alt={project.title} className="rounded-lg w-full h-96 object-cover" />
+                        <div className="px-4 py-2">
+                            <h1 className="text-3xl font-bold text-violet-400">{project.title}</h1>
+                            <p className="text-lg text-violet-400">{project.description}</p>
+                            <a href={project.link} target="_blank" rel="noreferrer">
+                                <button className="mt-2 text-white bg-indigo-600 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-700 rounded text-lg">
+                                    View Project
+                                </button>
+                            </a>
+                        </div>
+                    </div>
+                );
+            })
+        }
       </Slider>
     </div>
   );
