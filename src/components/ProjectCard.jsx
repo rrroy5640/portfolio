@@ -1,4 +1,3 @@
-import { useState } from "react";
 import projects from "../projects";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
@@ -19,7 +18,7 @@ export const ProjectCard = () => {
   };
 
   return (
-    <div className=" p-14 max-w-sm md:max-w-md lg:max-w-md mx-auto items-center">
+    <div className=" p-14 max-w-sm md:max-w-md lg:max-w-md mx-auto items-cente">
       <Slider {...settings}>
         {projects.map((project, index) => (
           <div key={index} className=" items-center  group relative">
@@ -27,7 +26,7 @@ export const ProjectCard = () => {
               <img
                 src={project.image}
                 alt={`Project ${index}`}
-                className="w-full"
+                className="w-full rounded-lg shadow-lg object-cover object-center"
               />
               <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                 <p className="text-white text-lg p-4">{project.description}</p>
