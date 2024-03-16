@@ -29,7 +29,7 @@ export const ProjectCard = () => {
                         <div className="px-4 py-2">
                             <h1 className="text-3xl font-bold text-violet-400">{project.title}</h1>
                             <p className="text-lg text-violet-400">{project.description}</p>
-                            <a href={project.link} target="_blank" rel="noreferrer">
+                            <a href={project.url} target="_blank" rel="noreferrer">
                                 <button className="mt-2 text-white bg-indigo-600 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-700 rounded text-lg">
                                     View Project
                                 </button>
