@@ -36,9 +36,9 @@ export const NavBar = () => {
         </svg>
       </button>
       <ul
-        className={`${
-          isNavExpanded ? "flex " : "hidden"
-        } flex-col items-center justify-center fixed inset-0 z-40 bg-black bg-opacity-90 md:flex md:flex-row md:relative md:bg-transparent md:bg-opacity-100 md:z-auto md:inset-auto md:p-0`}
+        className={` flex flex-col items-center justify-center fixed inset-0 z-40 bg-black bg-opacity-90 md:flex md:flex-row md:relative md:bg-transparent md:bg-opacity-100 md:z-auto md:inset-auto md:p-0 transition-opacity duration-500 ease-in-out ${
+          isNavExpanded ? "opacity-100 visible" : "opacity-0 invisible md:visible md:opacity-100"
+        }`}
       >
         <li className="mb-4 px-2 md:mb-0">
           <Link
