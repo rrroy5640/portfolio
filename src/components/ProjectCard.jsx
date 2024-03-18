@@ -11,7 +11,7 @@ export const ProjectCard = () => {
     slidesToShow: 1,
     slidesToScroll: 1,
     adaptiveHeight: true,
-    autoplay: true,
+    //autoplay: true,
     autoplaySpeed: 2000,
     pauseOnHover: true,
     swipeToSlide: true,
@@ -22,14 +22,20 @@ export const ProjectCard = () => {
       <Slider {...settings}>
         {projects.map((project, index) => {
           return (
-            <div key={index} className="w-full group relative">
-              <a href={project.url} target="_blank" rel="noreferrer">
+            <div key={index} className="rounded-lg w-96 group relative">
+              <a
+                href={project.url}
+                target="_blank"
+                rel="noreferrer"
+                className=" block max-w-lg w-full"
+              >
                 <img
                   src={project.image}
-                  className="rounded-lg w-full h-full object-cover"
+                  className="rounded-lg w-96 h-full object-contain min-w-full"
                 />
               </a>
-              <div className="px-4 py-2 bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 ">
+
+              <div className="px-4 absolute bottom-0 left-0 bg-gradient-to-t from-black to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 ">
                 <p className="text-lg text-white">{project.description}</p>
               </div>
             </div>
