@@ -5,10 +5,10 @@ export const NavBar = () => {
   const [isNavExpanded, setIsNavExpanded] = useState(false);
 
   return (
-    <nav className="fixed w-full flex justify-between items-center px-8 py-4 bg-gradient-to-b from-black">
+    <nav className="fixed w-full flex justify-between items-center px-8 py-4 bg-gradient-to-b from-black z-50">
       <img src="logo.png" className="w-16 h-16"></img>
       <button
-        className="text-xl text-white md:hidden"
+        className="text-xl z-50 text-white md:hidden"
         onClick={() => setIsNavExpanded(!isNavExpanded)}
       >
         <svg
@@ -36,46 +36,48 @@ export const NavBar = () => {
         </svg>
       </button>
       <ul
-        className={`flex flex-col md:flex-row md:items-center absolute md:static max-w-lg  md:w-auto transition-all duration-300 ease-in ${isNavExpanded ? "top-16 right-0 left-auto mr-3" : "top-[-490px] right-0 left-auto"}`}
+        className={`${
+          isNavExpanded ? "flex " : "hidden"
+        } flex-col items-center justify-center fixed inset-0 z-40 bg-black bg-opacity-90 md:flex md:flex-row md:relative md:bg-transparent md:bg-opacity-100 md:z-auto md:inset-auto md:p-0`}
       >
-        <li className="mb-4 px-2">
+        <li className="mb-4 px-2 md:mb-0">
           <Link
             to="home"
             smooth={true}
             duration={500}
             onClick={() => setIsNavExpanded(false)}
           >
-            <button className=" text-indigo-400 h-4 text-2xl">Home</button>
+            <button className="text-indigo-400 text-2xl">Home</button>
           </Link>
         </li>
-        <li className="mb-4 px-2">
+        <li className="mb-4 px-2 md:mb-0">
           <Link
             to="aboutme"
             smooth={true}
             duration={500}
             onClick={() => setIsNavExpanded(false)}
           >
-            <button className=" text-indigo-400 h-4 text-2xl">About Me</button>
+            <button className="text-indigo-400 text-2xl">About Me</button>
           </Link>
         </li>
-        <li className="mb-4 px-2">
+        <li className="mb-4 px-2 md:mb-0">
           <Link
             to="projects"
             smooth={true}
             duration={500}
             onClick={() => setIsNavExpanded(false)}
           >
-            <button className=" text-indigo-400 h-4 text-2xl">Project</button>
+            <button className="text-indigo-400 text-2xl">Project</button>
           </Link>
         </li>
-        <li className="mb-4 px-2">
+        <li className="mb-4 px-2 md:mb-0">
           <Link
             to="contact"
             smooth={true}
             duration={500}
             onClick={() => setIsNavExpanded(false)}
           >
-            <button className=" text-indigo-400 h-4 text-2xl">Contact</button>
+            <button className="text-indigo-400 text-2xl">Contact</button>
           </Link>
         </li>
       </ul>
