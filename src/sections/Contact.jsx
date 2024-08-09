@@ -1,10 +1,11 @@
 import { ContactForm } from "../components/ContactForm";
 import { DownloadResumeButton } from "../components/DownloadResumeButton";
-import { IoMailOutline, IoCallOutline } from "react-icons/io5";
+import { IoMailOutline, IoCallOutline, IoLogoLinkedin } from "react-icons/io5";
 
 export const Contact = () => {
   const emailAddress = "hly5640@gmail.com";
   const phoneNumber = "049-336-9445";
+  const linkedIn = "www.linkedin.com/in/linyi-huang";
 
   return (
     <section className="flex flex-col md:flex-row w-full h-screen bg-cover bg-center bg-no-repeat bg-fixed items-center justify-center bg-slate-800 space-y-8 md:space-y-0 md:space-x-10 py-12">
@@ -31,7 +32,17 @@ export const Contact = () => {
             {phoneNumber}
           </a>
         </span>
-
+        <span className="flex">
+          <IoLogoLinkedin className="text-white h-6 w-6 mr-2" />
+          <a
+            href={linkedIn}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-white hover:text-cyan-300 underline"
+          >
+            {linkedIn}
+          </a>
+        </span>
         <DownloadResumeButton />
       </div>
       <ContactForm />

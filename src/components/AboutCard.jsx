@@ -15,7 +15,7 @@ export const AboutCard = () => {
           <ul className="list-disc list-inside">
             <li>HTML, CSS, Javascript, Kotlin, C#</li>
             <li>React, Node.js, Express, MongoDB, SQL</li>
-            <li>Git, GitHub, Heroku</li>
+            <li>Git, AWS cloud</li>
           </ul>
         </div>
       );
@@ -24,9 +24,9 @@ export const AboutCard = () => {
       return (
         <div className="h-48 w-64 md:w-72 lg:w-96 overflow-auto text-xl text-gray-300">
           <p>
-            <span>Bachelor in Computer Science</span>
-            <br />
             <span>University of Tasmania</span>
+            <br />
+            <span>Bachelor in Computer Science</span>
           </p>
         </div>
       );
@@ -34,7 +34,7 @@ export const AboutCard = () => {
   };
 
   return (
-    <div className=" shadow-lg rounded-lg p-4 mx-auto w-full md:max-w-4xl lg:max-w-4xl">
+    <div className=" shadow-lg rounded-lg p-4 mx-auto w-full md:max-w-4xl lg:max-w-4xl bg-slate-800">
       <div className=" justify-start mb-4">
         <button
           onClick={() => handleTabClick("skills")}
