@@ -35,7 +35,7 @@ export const Contact = () => {
         <span className="flex">
           <IoLogoLinkedin className="text-white h-6 w-6 mr-2" />
           <a
-            href={linkedIn}
+            href={`https://${linkedIn}`}
             target="_blank"
             rel="noopener noreferrer"
             className="text-white hover:text-cyan-300 underline"
