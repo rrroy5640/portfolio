@@ -13,12 +13,15 @@ function App() {
       <Element name="home" className="element">
         <Home />
       </Element>
+      <div className="h-12 bg-slate-900"></div>
       <Element name="aboutme" className="element">
         <AboutMe />
       </Element>
+      <div className="h-12 bg-slate-900"></div>
       <Element name="projects" className="element">
         <Project />
       </Element>
+      <div className="h-12 bg-black"></div>
       <Element name="contact" className="element">
         <Contact />
       </Element>
