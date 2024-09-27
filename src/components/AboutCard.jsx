@@ -13,9 +13,9 @@ export const AboutCard = () => {
       return (
         <div className="h-48 w-64 md:w-72 lg:w-96 overflow-auto text-xl text-gray-300">
           <ul className="list-disc list-inside">
-            <li>HTML, CSS, Javascript, Kotlin, C#</li>
-            <li>React, Node.js, Express, MongoDB, SQL</li>
-            <li>Git, AWS cloud</li>
+            <li>HTML, CSS, Javascript, TypeScript, React, Next.js, Redux, TailwindCSS</li>
+            <li>C#, ASP.NET Core, Express, Node.js, MongoDB, SQL, RESTful API</li>
+            <li>AWS, Docker, Git, Jenkins, ECS, Fargate, CI/CD</li>
           </ul>
         </div>
       );
@@ -23,11 +23,22 @@ export const AboutCard = () => {
     if (selectedTab === "education") {
       return (
         <div className="h-48 w-64 md:w-72 lg:w-96 overflow-auto text-xl text-gray-300">
-          <p>
-            <span>University of Tasmania</span>
-            <br />
-            <span>Bachelor in Computer Science</span>
-          </p>
+          <ul className="list-disc list-inside">
+            <li>
+              <span className="font-bold">University of Tasmania</span>
+              <br />
+              <span className="italic">Bachelor in Computer Science</span>
+            </li>
+          </ul>
+        </div>
+      );
+    }
+    if (selectedTab === "certification") {
+      return (
+        <div className="h-48 w-64 md:w-72 lg:w-96 overflow-auto text-xl text-gray-300">
+          <ul className="list-disc list-inside">
+            <li>AWS Solutions Architect Associate</li>
+          </ul>
         </div>
       );
     }
@@ -47,6 +58,12 @@ export const AboutCard = () => {
           className={`mr-4 pb-2 ${selectedTab === "education" ? " text-violet-500 border-b-2 border-violet-500 font-medium" : " text-slate-300"}`}
         >
           <h1 className="text-2xl font-bold">Education</h1>
+        </button>
+        <button
+          onClick={() => handleTabClick("certification")}
+          className={`mr-4 pb-2 ${selectedTab === "certification" ? " text-violet-500 border-b-2 border-violet-500 font-medium" : " text-slate-300"}`}
+        >
+          <h1 className="text-2xl font-bold">Certification</h1>
         </button>
       </div>
       <div>{details()}</div>
