@@ -8,7 +8,7 @@ export const Contact = () => {
   const linkedIn = "www.linkedin.com/in/linyi-huang";
 
   return (
-    <section className="flex flex-col md:flex-row w-full h-screen bg-cover bg-center bg-no-repeat bg-fixed items-center justify-center bg-slate-800 space-y-8 md:space-y-0 md:space-x-10 py-12">
+    <section className="flex flex-col md:flex-row w-full h-screen bg-cover bg-center bg-no-repeat items-center justify-center bg-gradient-to-b from-black to-slate-800 space-y-8 md:space-y-0 md:space-x-10 py-12">
       <div className="flex md:flex-1 flex-col items-start space-y-4  md:pl-16 lg:pl-48">
         <h1 className="text-3xl w-44 font-bold underline text-slate-500">
           Contact Me

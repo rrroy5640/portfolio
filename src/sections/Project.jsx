@@ -3,7 +3,7 @@ import { ProjectCard } from "../components/ProjectCard";
 export const Project = () => {
   return (
     <>
-      <section className="w-full h-screen bg-cover bg-center bg-no-repeat bg-fixed flex flex-col-reverse md:flex-row items-center justify-evenly bg-black">
+      <section className="w-full h-screen bg-cover bg-center bg-no-repeat flex flex-col-reverse md:flex-row items-center justify-evenly bg-gradient-to-b from-slate-900 to-black">
         <div className="mx-auto">
           <ProjectCard />
         </div>
