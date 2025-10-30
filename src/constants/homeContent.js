@@ -6,7 +6,7 @@ export const homeContent = {
     { text: "View Projects", href: "#projects" },
     { text: "Contact Me", href: "#contact" },
   ],
-  name: "Linyi",
+  name: "Linyi-DEV",
 };
 
 export const animationDelays = {
