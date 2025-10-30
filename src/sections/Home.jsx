@@ -1,21 +1,56 @@
+import { motion } from "framer-motion";
+import { ParallaxBackground } from "../components/home/ParallaxBackground";
+import { SVGNameAnimation } from "../components/home/SVGNameAnimation";
+import { homeContent, animationDelays } from "../constants/homeContent";
+
 export const Home = () => {
   return (
-    <section className="w-full h-screen bg-cover bg-center bg-no-repeat flex flex-col-reverse md:flex-row items-center justify-evenly bg-gradient-to-b from-black to-slate-900">
-      <div className="mx-auto text-center md:text-left">
-        <h2 className="text-3xl text-violet-400 mb-2">Developer | AWS Solutions Architect</h2>
-        <h1 className="text-6xl font-bold text-violet-400 leading-tight">
-          Hi,<br /> I&apos;m Linyi
-        </h1>
-        <p className="mt-4 text-xl text-violet-400">
-          Hobart, Tasmania
-        </p>
-      </div>
-      <div className="flex flex-col max-w-lg items-center mx-auto lg:pr-16 relative">
-        <img
-          src="/avatar1.jpg"
-          alt="Linyi"
-          className="rounded-full w-64 h-64 border-4 border-violet-400 shadow-xl object-cover transition-transform hover:scale-105 duration-300"
-        />
+    <section
+      id="home"
+      className="relative flex min-h-screen items-center justify-center px-4 pt-28 pb-20"
+    >
+      <ParallaxBackground />
+      <div className="mx-auto max-w-4xl text-center z-10">
+        <SVGNameAnimation />
+
+        <motion.h1
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: animationDelays.title, duration: 0.6 }}
+          className="text-4xl font-bold leading-tight md:text-5xl mt-8"
+        >
+          {homeContent.title}
+        </motion.h1>
+
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: animationDelays.description, duration: 0.6 }}
+          className="mt-4 text-balance text-base text-white/70 md:text-lg"
+        >
+          {homeContent.description}
+        </motion.p>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: animationDelays.buttons, duration: 0.6 }}
+          className="mt-8 flex items-center justify-center gap-3"
+        >
+          {homeContent.buttons.map((button, idx) => (
+            <a
+              key={idx}
+              href={button.href}
+              className={
+                idx === 0
+                  ? "rounded-xl bg-white px-5 py-2 text-sm font-medium text-black shadow hover:shadow-lg transition"
+                  : "rounded-xl border border-white/20 px-5 py-2 text-sm font-medium text-white/90 hover:bg-white/5 transition"
+              }
+            >
+              {button.text}
+            </a>
+          ))}
+        </motion.div>
       </div>
     </section>
   );
