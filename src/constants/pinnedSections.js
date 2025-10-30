@@ -9,10 +9,9 @@ export const pinnedSections = [
       "Building intelligent applications that leverage AI and machine learning to solve complex problems and enhance user experiences.",
     projectId: 1, // Travel Craft
     features: [
-      "OpenAI API Integration",
-      "Natural Language Processing",
-      "Intelligent Content Generation",
-      "AI-Powered Recommendations",
+      "API Integration (OpenAI, Mapbox, etc.)",
+      "Prototyping and Iteration",
+      "Full Stack Development",
     ],
   },
   {
@@ -49,7 +48,6 @@ export const pinnedSections = [
     projectId: 2, // OM Lending
     features: [
       "Rapid Development",
-      "CMS Integration",
       "SEO Optimization",
       "Multi-site Management",
     ],

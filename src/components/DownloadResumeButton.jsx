@@ -3,7 +3,7 @@ export const DownloadResumeButton = () => {
     <a
       href="/Resume - Linyi (Roy) Huang - Full-Stack Developer.pdf"
       download="Linyi (Roy) Huang - Full-Stack Developer.pdf"
-      className="inline-flex items-center justify-center gap-2 w-full px-6 py-3 bg-purple-700/90 hover:bg-purple-600/90 text-white font-semibold rounded-lg border border-purple-500/50 hover:border-purple-400 transform hover:scale-105 transition-all duration-300 group"
+      className="inline-flex items-center justify-center gap-2 w-full px-6 py-3 bg-white/10 backdrop-blur-lg border border-white/20 text-white font-semibold rounded-xl hover:bg-white/20 hover:border-white/40 hover:scale-105 transition-all duration-300 group"
     >
       <svg
         className="w-5 h-5 group-hover:translate-y-[-2px] transition-transform"
@@ -20,7 +20,7 @@ export const DownloadResumeButton = () => {
       </svg>
       Download Resume
       <svg
-        className="w-5 h-5 group-hover:translate-y-[2px] transition-transform"
+        className="w-4 h-4 group-hover:translate-x-1 transition-transform"
         fill="none"
         stroke="currentColor"
         viewBox="0 0 24 24"
@@ -29,7 +29,7 @@ export const DownloadResumeButton = () => {
           strokeLinecap="round"
           strokeLinejoin="round"
           strokeWidth={2}
-          d="M19 9l-7 7-7-7"
+          d="M9 5l7 7-7 7"
         />
       </svg>
     </a>

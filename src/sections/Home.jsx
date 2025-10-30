@@ -43,11 +43,24 @@ export const Home = () => {
               href={button.href}
               className={
                 idx === 0
-                  ? "rounded-xl bg-white px-5 py-2 text-sm font-medium text-black shadow hover:shadow-lg transition"
-                  : "rounded-xl border border-white/20 px-5 py-2 text-sm font-medium text-white/90 hover:bg-white/5 transition"
+                  ? "inline-flex items-center gap-2 px-6 py-3 bg-white text-black font-semibold rounded-xl shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 group"
+                  : "inline-flex items-center gap-2 px-6 py-3 border border-white/20 text-white font-semibold rounded-xl hover:bg-white/10 hover:border-white/40 hover:scale-105 transition-all duration-300 group"
               }
             >
               {button.text}
+              <svg
+                className="w-4 h-4 group-hover:translate-x-1 transition-transform"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M9 5l7 7-7 7"
+                />
+              </svg>
             </a>
           ))}
         </motion.div>

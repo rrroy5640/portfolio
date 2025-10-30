@@ -42,7 +42,7 @@ export const NavBar = () => {
           onClick={() => scrollToSection("home")}
           className="font-semibold tracking-tight text-white hover:opacity-80 transition"
         >
-          Roy · Portfolio
+          Linyi-Dev
         </button>
         <nav className="hidden gap-6 text-sm md:flex">
           {navLinks.map((link) => (

@@ -2,7 +2,6 @@ import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { ContactForm } from "../components/ContactForm";
 import { DownloadResumeButton } from "../components/DownloadResumeButton";
-import { RippleButton } from "../components/contact/RippleButton";
 import { IoMailOutline, IoCallOutline, IoLogoLinkedin } from "react-icons/io5";
 
 export const Contact = () => {
@@ -95,16 +94,6 @@ export const Contact = () => {
           <div className="bg-white/5 backdrop-blur-lg rounded-2xl p-8 border border-white/10">
             <ContactForm />
           </div>
-        </div>
-
-        <div className="mt-12 text-center">
-          <RippleButton
-            onClick={() => {
-              window.location.href = `mailto:${emailAddress}`;
-            }}
-          >
-            Send Email
-          </RippleButton>
         </div>
       </div>
     </section>
