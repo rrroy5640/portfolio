@@ -23,6 +23,7 @@ export const NavBar = () => {
   const navLinks = [
     { id: "home", label: "Home" },
     { id: "projects", label: "Projects" },
+    { id: "ai-lab", label: "AI Lab" },
     { id: "about", label: "About" },
     { id: "contact", label: "Contact" },
   ];

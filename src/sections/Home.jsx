@@ -1,15 +1,127 @@
-import { motion } from "framer-motion";
+import { useCallback, useRef } from "react";
+import {
+  motion,
+  useMotionTemplate,
+  useMotionValue,
+  useSpring,
+  useTransform,
+} from "framer-motion";
 import { ParallaxBackground } from "../components/home/ParallaxBackground";
 import { SVGNameAnimation } from "../components/home/SVGNameAnimation";
 import { homeContent, animationDelays } from "../constants/homeContent";
 
 export const Home = () => {
+  const sectionRef = useRef(null);
+  const pointerX = useMotionValue(0.5);
+  const pointerY = useMotionValue(0.5);
+
+  const smoothX = useSpring(pointerX, {
+    stiffness: 150,
+    damping: 35,
+    mass: 0.2,
+  });
+  const smoothY = useSpring(pointerY, {
+    stiffness: 150,
+    damping: 35,
+    mass: 0.2,
+  });
+
+  const gradientX = useTransform(smoothX, (v) => `${v * 100}%`);
+  const gradientY = useTransform(smoothY, (v) => `${v * 100}%`);
+
+  const spotlight = useMotionTemplate`radial-gradient(120% 120% at ${gradientX} ${gradientY}, rgba(139, 92, 246, 0.2), rgba(12, 12, 20, 0) 65%)`;
+  const trail = useMotionTemplate`radial-gradient(95% 95% at ${gradientX} ${gradientY}, rgba(56, 189, 248, 0.16), rgba(12, 12, 20, 0) 70%)`;
+  const halo = useMotionTemplate`radial-gradient(65% 65% at ${gradientX} ${gradientY}, rgba(255, 255, 255, 0.12), rgba(12, 12, 20, 0) 70%)`;
+
+  const glowX = useTransform(smoothX, [0, 1], [-220, 220]);
+  const glowY = useTransform(smoothY, [0, 1], [-160, 160]);
+  const secondaryGlowX = useTransform(smoothX, [0, 1], [160, -160]);
+  const secondaryGlowY = useTransform(smoothY, [0, 1], [-200, 200]);
+  const primaryTransform = useMotionTemplate`translate(-50%, -50%) translate(${glowX}px, ${glowY}px)`;
+  const secondaryTransform = useMotionTemplate`translate(-50%, -50%) translate(${secondaryGlowX}px, ${secondaryGlowY}px)`;
+
+  const updatePointer = useCallback(
+    (clientX, clientY) => {
+      const rect = sectionRef.current?.getBoundingClientRect();
+      if (!rect) return;
+
+      const x = (clientX - rect.left) / rect.width;
+      const y = (clientY - rect.top) / rect.height;
+
+      pointerX.set(Math.min(Math.max(x, 0), 1));
+      pointerY.set(Math.min(Math.max(y, 0), 1));
+    },
+    [pointerX, pointerY]
+  );
+
+  const handlePointerMove = useCallback(
+    (event) => updatePointer(event.clientX, event.clientY),
+    [updatePointer]
+  );
+
+  const handleMouseMove = useCallback(
+    (event) => updatePointer(event.clientX, event.clientY),
+    [updatePointer]
+  );
+
+  const handleTouchMove = useCallback(
+    (event) => {
+      const touch = event.touches?.[0];
+      if (!touch) return;
+      updatePointer(touch.clientX, touch.clientY);
+    },
+    [updatePointer]
+  );
+
+  const handlePointerLeave = useCallback(() => {
+    pointerX.set(0.5);
+    pointerY.set(0.5);
+  }, [pointerX, pointerY]);
+
   return (
     <section
       id="home"
-      className="relative flex min-h-screen items-center justify-center px-4 pt-28 pb-20"
+      ref={sectionRef}
+      onPointerMove={handlePointerMove}
+      onMouseMove={handleMouseMove}
+      onTouchMove={handleTouchMove}
+      onPointerLeave={handlePointerLeave}
+      className="relative flex min-h-screen items-center justify-center overflow-hidden px-4 pt-28 pb-20"
     >
       <ParallaxBackground />
+      <motion.div
+        aria-hidden
+        style={{ backgroundImage: trail, opacity: 0.45 }}
+        className="pointer-events-none absolute inset-0 z-0"
+      />
+      <motion.div
+        aria-hidden
+        style={{ backgroundImage: halo, opacity: 0.3 }}
+        className="pointer-events-none absolute inset-0 z-0 mix-blend-screen"
+      />
+      <motion.div
+        aria-hidden
+        style={{
+          transform: primaryTransform,
+          left: "50%",
+          top: "45%",
+        }}
+        className="pointer-events-none absolute z-0 h-[620px] w-[620px] rounded-full bg-[radial-gradient(circle_at_center,_rgba(147,51,234,0.25),_rgba(12,12,20,0))] blur-[140px]"
+      />
+      <motion.div
+        aria-hidden
+        style={{
+          transform: secondaryTransform,
+          left: "48%",
+          top: "68%",
+        }}
+        className="pointer-events-none absolute z-0 h-[540px] w-[540px] rounded-full bg-[radial-gradient(circle_at_center,_rgba(59,130,246,0.22),_rgba(12,12,20,0))] blur-[130px]"
+      />
+      <motion.div
+        aria-hidden
+        style={{ backgroundImage: spotlight, opacity: 0.45 }}
+        className="pointer-events-none absolute inset-0 z-0 mix-blend-screen"
+      />
       <div className="mx-auto max-w-4xl text-center z-10">
         <SVGNameAnimation />
 

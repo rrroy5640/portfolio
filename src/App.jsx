@@ -4,6 +4,7 @@ import { NavBar } from "./components/NavBar";
 import { Contact } from "./sections/Contact";
 import { PinnedHorizontal } from "./sections/PinnedHorizontal";
 import { Footer } from "./components/Footer";
+import { AILab } from "./sections/AILab/AILab";
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <NavBar />
       <Home />
       <PinnedHorizontal />
+      <AILab />
       <AboutMe />
       <Contact />
       <Footer />

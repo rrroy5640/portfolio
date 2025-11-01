@@ -5,3 +5,4 @@
 export { pinnedSections, getProjectById } from "./pinnedSections";
 export { homeContent, animationDelays } from "./homeContent";
 export { achievements, workExperience, contentSections } from "./aboutData";
+export { aiLabContent, animationConfig } from "./aiLabData";
